@@ -1,0 +1,72 @@
+1. Initialization
+First, you need to create three variables to act as your counters. Set all of them to zero.
+
+character_count = 0
+word_count = 0
+vowel_count = 0
+
+Define a list of all the vowels (both uppercase and lowercase) to make checking easier.
+
+vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+
+2. Character-by-Character Processing
+Start a loop that reads the sentence one character at a time, from the beginning to the end.
+
+For each character that is read, perform the following checks:
+
+Count the characters:
+Increment character_count by 1.
+
+Count the words:
+Check if the current character is a space (' '). If it is, increment word_count by 1.
+
+Count the vowels:
+Check if the current character is in your vowels list. If it is, increment vowel_count by 1.
+
+Stop the loop:
+Check if the current character is a period (.). If it is, stop the loop.
+
+3. Final Adjustments
+After the loop has finished, the word_count variable will be one less than the actual number of words. This is because words are separated by spaces, but the last word is followed by a period, not a space.
+
+To fix this, add 1 to your word_count.
+
+word_count = word_count + 1
+
+Example Walkthrough
+Let's use the sentence: I am a coder.
+
+Initialize: character_count = 0, word_count = 0, vowel_count = 0
+
+Loop:
+
+'I' -> character_count = 1, vowel_count = 1
+
+' ' -> character_count = 2, word_count = 1
+
+'a' -> character_count = 3, vowel_count = 2
+
+'m' -> character_count = 4
+
+' ' -> character_count = 5, word_count = 2
+
+'a' -> character_count = 6, vowel_count = 3
+
+' ' -> character_count = 7, word_count = 3
+
+'c' -> character_count = 8
+
+'o' -> character_count = 9, vowel_count = 4
+
+'d' -> character_count = 10
+
+'e' -> character_count = 11, vowel_count = 5
+
+'r' -> character_count = 12
+
+'.' -> character_count = 13. Stop the loop.
+
+Final Adjustment: word_count is currently 3. Add 1 to it, so word_count becomes 4.
+
+Final Result: The algorithm determines the sentence has a length of 13, 4 words, and 5 vowels.
+
